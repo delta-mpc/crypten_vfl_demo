@@ -47,17 +47,22 @@ RENDEZVOUS=file:///tmp/vfl && WORLD_SIZE=3 && RANK=2 python train_multi.py
 假设有3个参与方，分别为A,B,C
 
 A的IP为192.168.1.100，B的IP为192.168.1.101，C的IP为192.168.1.102，A,B,C可以互相访问
+将项目文件分别复制到3台机器下，
+将dataset/a下的数据复制到A中，dataset/b下的数据复制到B中，dataset/c下的文件复制到C中
 
-打开三个终端，分别输入命令：
+在A,B,C三台机器的终端中，分别输入命令
 
+A
 ```
 RENDEZVOUS=tcp://192.168.1.100:2345 && WORLD_SIZE=3 && RANK=0 python train_multi.py
 ```
 
+B
 ```
 RENDEZVOUS=tcp://192.168.1.100:2345 && WORLD_SIZE=3 && RANK=1 python train_multi.py
 ```
 
+C
 ```
 RENDEZVOUS=tcp://192.168.1.100:2345 && WORLD_SIZE=3 && RANK=2 python train_multi.py
 ```
