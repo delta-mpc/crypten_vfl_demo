@@ -29,15 +29,15 @@ python train_single.py
 打开三个终端，分别输入命令：
 
 ```
-RENDEZVOUS=file:///tmp/vfl && WORLD_SIZE=3 && RANK=0 python train_multi.py
+RENDEZVOUS=file:///tmp/vfl WORLD_SIZE=3 RANK=0 python train_multi.py
 ```
 
 ```
-RENDEZVOUS=file:///tmp/vfl && WORLD_SIZE=3 && RANK=1 python train_multi.py
+RENDEZVOUS=file:///tmp/vfl WORLD_SIZE=3 RANK=1 python train_multi.py
 ```
 
 ```
-RENDEZVOUS=file:///tmp/vfl && WORLD_SIZE=3 && RANK=2 python train_multi.py
+RENDEZVOUS=file:///tmp/vfl WORLD_SIZE=3 RANK=2 python train_multi.py
 ```
 
 即可开始单机纵向联邦学习
@@ -54,17 +54,17 @@ A的IP为192.168.1.100，B的IP为192.168.1.101，C的IP为192.168.1.102，A,B,C
 
 A
 ```
-RENDEZVOUS=tcp://192.168.1.100:2345 && WORLD_SIZE=3 && RANK=0 python train_multi.py
+RENDEZVOUS=tcp://192.168.1.100:2345 WORLD_SIZE=3 RANK=0 python train_multi.py
 ```
 
 B
 ```
-RENDEZVOUS=tcp://192.168.1.100:2345 && WORLD_SIZE=3 && RANK=1 python train_multi.py
+RENDEZVOUS=tcp://192.168.1.100:2345 WORLD_SIZE=3 RANK=1 python train_multi.py
 ```
 
 C
 ```
-RENDEZVOUS=tcp://192.168.1.100:2345 && WORLD_SIZE=3 && RANK=2 python train_multi.py
+RENDEZVOUS=tcp://192.168.1.100:2345 WORLD_SIZE=3 RANK=2 python train_multi.py
 ```
 
 即可开始单机纵向联邦学习
