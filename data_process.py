@@ -125,12 +125,14 @@ if __name__ == '__main__':
     mean_std = get_mean_std(df)
 
     arr = convert_csv_to_arr("adult.train.csv", mean_std)
+    np.savez("dataset/adult.train.npz", arr)
     a, b, label = split_feature(arr)
     np.savez("dataset/a/train.npz", a)
     np.savez("dataset/b/train.npz", b)
     np.savez("dataset/c/train.npz", label)
 
     arr = convert_csv_to_arr("adult.test.csv", mean_std)
+    np.savez("dataset/adult.test.npz", arr)
     a, b, label = split_feature(arr)
     np.savez("dataset/a/test.npz", a)
     np.savez("dataset/b/test.npz", b)
